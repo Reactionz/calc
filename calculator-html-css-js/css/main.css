@@ -1,0 +1,59 @@
+.calc {
+    background-color: peachpuff;
+    display: flex;    
+    flex-flow: wrap;
+    width: 25%;
+    border: 1px solid #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calc-display {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    min-width: 100%;
+}
+
+.screen {
+    height: 50px;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.calc-keypad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+.calc-button-row {
+    display: flex;
+    flex-basis: 100%;
+}
+
+.calc-button {
+    background-color:lightgrey;
+    border: 1px solid #333;
+    padding: 16px;
+    font-size: 16px;
+    text-decoration: none;
+    width: 20%;
+}
+
+.calc-button:active {
+    background-color: darkgray;
+}
+
+.math-symbol {
+    background-color: rgb(255, 153, 0);
+    color: #fff;
+}
+
+.double-button {
+    width: 40%;
+}
+
+.triple-button {
+    width: 60%;
+}
