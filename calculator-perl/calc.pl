@@ -51,7 +51,7 @@ sub square {
 # Clear current input (clear), cancel or reset the calculator option
 
 while($continue eq "y") {
-    print "choose operation to use:\n";
+    print "-- Operation Choices --\n";
     print "1 - addition\n";
     print "2 - subtraction\n";
     print "3 - multiplication\n";
@@ -64,6 +64,7 @@ while($continue eq "y") {
     print "10 - Logarithm Base 10 (log)\n";
     print "11 - Power of 2 (sq)\n";
     print "12 - Square Root (sqrt)\n";
+    print "choose operation to use:\n";
 
     my $operation = <STDIN>;
     chomp $operation;
