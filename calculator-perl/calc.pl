@@ -9,6 +9,7 @@ my $sNum;
 $continue = 'y';
 
 sub add {
+
     my $r = $_[0] + $_[1];
     return $r;
 }
@@ -24,7 +25,12 @@ sub multiply {
 }
 
 sub divide {
+    my $error = 'cannot divide by zero';
+    if($_[1] == 0) {
+        return $error;
+    }
     my $r = $_[0] / $_[1];
+
     return $r;
 }
 
@@ -50,9 +56,9 @@ while($continue eq "y") {
     print "2 - subtraction\n";
     print "3 - multiplication\n";
     print "4 - division\n";
-    print "5 - sine\n";
-    print "6 - cosine\n";
-    print "7 - tangent\n";
+    print "5 - sine (converts to degrees)\n";
+    print "6 - cosine (converts to degrees)\n";
+    print "7 - tangent (converts to degrees)\n";
     print "8 - Exponential\n";
     print "9 - Natural Logarithm (ln)\n";
     print "10 - Logarithm Base 10 (log)\n";
@@ -61,11 +67,14 @@ while($continue eq "y") {
 
     my $operation = <STDIN>;
     chomp $operation;
-    
+    print "input result to use previous answer or 0"
     if($operation eq '1') {
         print "enter first number: ";
         $fNum = <STDIN>;
         chomp $fNum;
+        if ($fNum eq 'result') {
+                $fNum = $result // 0;
+        }
         print "enter second number: ";
         $sNum = <STDIN>;
         chomp $sNum;
@@ -77,6 +86,9 @@ while($continue eq "y") {
         print "enter first number: ";
         $fNum = <STDIN>;
         chomp $fNum;
+        if ($fNum eq 'result') {
+            $fNum = $result // 0;
+        }
         print "enter second number: ";
         $sNum = <STDIN>;
         chomp $sNum;
@@ -88,6 +100,9 @@ while($continue eq "y") {
         print "enter first number: ";
         $fNum = <STDIN>;
         chomp $fNum;
+        if ($fNum eq 'result') {
+            $fNum = $result // 0;
+        }
         print "enter second number: ";
         $sNum = <STDIN>;
         chomp $sNum;
@@ -99,9 +114,13 @@ while($continue eq "y") {
         print "enter first number: ";
         $fNum = <STDIN>;
         chomp $fNum;
+        if ($fNum eq 'result') {
+            $fNum = $result // 0;
+        }
         print "enter second number: ";
         $sNum = <STDIN>;
         chomp $sNum;
+        
         $result = divide($fNum, $sNum);
 
         print "$fNum / $sNum = $result\n"
@@ -110,6 +129,9 @@ while($continue eq "y") {
         print "enter a number: ";
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = sin($num * pi / 180);
 
         print "sin($num) = $result\n";
@@ -118,6 +140,9 @@ while($continue eq "y") {
         print 'enter a number: ';
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = cos($num * pi / 180);
 
         print "cos($num) = $result\n";
@@ -126,6 +151,9 @@ while($continue eq "y") {
         print 'enter a number: ';
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = tan($num * pi / 180);
 
         print "tan($num) = $result\n";
@@ -134,6 +162,9 @@ while($continue eq "y") {
         print 'enter first number: ';
         $fNum = <STDIN>;
         chomp $fNum;
+        if ($fNum eq 'result') {
+            $fNum = $result // 0;
+        }
         print 'enter second number: ';
         $sNum = <STDIN>;
         chomp $sNum;
@@ -146,6 +177,9 @@ while($continue eq "y") {
         print 'enter a number: ';
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = ln($num);
 
         print "ln($num) = $result\n";
@@ -154,6 +188,9 @@ while($continue eq "y") {
         print 'enter a number: ';
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = log10($num);
 
         print "log10($num) = $result\n";
@@ -162,6 +199,9 @@ while($continue eq "y") {
         print 'enter a number: ';
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = square($num);
 
         print "sq($num) = $result\n";
@@ -170,11 +210,14 @@ while($continue eq "y") {
         print 'enter a number: ';
         $num = <STDIN>;
         chomp $num;
+        if ($num eq 'result') {
+            $num = $result // 0;
+        }
         $result = sqrt($num);
 
         print "sqrt($num) = $result\n";
     } else {
-        print 'invalid operation'
+        print 'invalid operation\n'
     }
     print "Would you like to Continue? y/n?\n";
     $continue = <STDIN>;
