@@ -67,7 +67,7 @@ while($continue eq "y") {
 
     my $operation = <STDIN>;
     chomp $operation;
-    print "input result to use previous answer or 0"
+    print "input result to use previous answer or 0\n";
     if($operation eq '1') {
         print "enter first number: ";
         $fNum = <STDIN>;
