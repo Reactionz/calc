@@ -1,9 +1,28 @@
 import tkinter
+from tkinter.ttk import Style
 from math import *
 
 ## first thing that should always be done when working with Tkinter
 root = tkinter.Tk()
 root.title("Calculator")
+
+#Defining padding setup of rows and columns
+root.rowconfigure(0, pad=1)
+root.rowconfigure(1, pad=1)
+root.rowconfigure(2, pad=1)
+root.rowconfigure(3, pad=1)
+root.rowconfigure(4, pad=1)
+root.rowconfigure(5, pad=1)
+root.rowconfigure(6, pad=1)
+
+root.columnconfigure(0, pad=2)
+root.columnconfigure(1, pad=2)
+root.columnconfigure(2, pad=2)
+root.columnconfigure(3, pad=2)
+root.columnconfigure(4, pad=2)
+
+# tkinter.ttk.Style().configure('TButton', padding=(0, 0, 0, 0))
+
 
 #global variable setup
 fNum = None
@@ -211,40 +230,41 @@ def buttonEqual():
 #Define Buttons
 ##don't use the parentheses as it will run immediately
 
-buttonDecimal = tkinter.Button(root, text=".", padx=55, pady=20, bg = "white smoke", command = buttonDecimal)
-button0 = tkinter.Button(root, text="0", padx=120, pady=20,bg = "white smoke", command=lambda: buttonClick(0))
-button1 = tkinter.Button(root, text="1", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(1)) 
-button2 = tkinter.Button(root, text="2", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(2)) 
-button3 = tkinter.Button(root, text="3", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(3)) 
-button4 =tkinter.Button(root, text="4", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(4)) 
-button5 = tkinter.Button(root, text="5", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(5)) 
-button6 = tkinter.Button(root, text="6", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(6)) 
-button7 = tkinter.Button(root, text="7", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(7)) 
-button8 = tkinter.Button(root, text="8", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(8)) 
-button9 = tkinter.Button(root, text="9", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(9))
+buttonDecimal = tkinter.Button(root, text=".", padx=70, pady=20, bg = "white smoke", command = buttonDecimal)
+button0 = tkinter.Button(root, text="0", padx=150, pady=20,bg = "white smoke", command=lambda: buttonClick(0))
+button1 = tkinter.Button(root, text="1", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(1)) 
+button2 = tkinter.Button(root, text="2", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(2)) 
+button3 = tkinter.Button(root, text="3", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(3)) 
+button4 =tkinter.Button(root, text="4", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(4)) 
+button5 = tkinter.Button(root, text="5", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(5)) 
+button6 = tkinter.Button(root, text="6", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(6)) 
+button7 = tkinter.Button(root, text="7", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(7)) 
+button8 = tkinter.Button(root, text="8", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(8)) 
+button9 = tkinter.Button(root, text="9", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(9))
 
-buttonAdd = tkinter.Button(root, text="+", padx=55, pady=20, bg="PeachPuff2", command=buttonAddition)
-buttonMinus = tkinter.Button(root, text="-", padx=55, pady=20, bg="PeachPuff2", command=buttonSubtraction)
-buttonMultiply = tkinter.Button(root, text="x", padx=55, pady=20, bg="PeachPuff2", command=buttonMultiplication)
-buttonDivide = tkinter.Button(root, text="÷", padx=55, pady=20, bg="PeachPuff2", command=buttonDivision)
-buttonEqual = tkinter.Button(root, text="=", padx=55, pady=20, bg="PeachPuff2", command=buttonEqual)
+buttonAdd = tkinter.Button(root, text="+", padx=70, pady=20, bg="PeachPuff2", command=buttonAddition)
+buttonMinus = tkinter.Button(root, text="-", padx=70, pady=20, bg="PeachPuff2", command=buttonSubtraction)
+buttonMultiply = tkinter.Button(root, text="x", padx=70, pady=20, bg="PeachPuff2", command=buttonMultiplication)
+buttonDivide = tkinter.Button(root, text="÷", padx=70, pady=20, bg="PeachPuff2", command=buttonDivision)
+buttonEqual = tkinter.Button(root, text="=", padx=70, pady=20, bg="PeachPuff2", command=buttonEqual)
 
-buttonClear = tkinter.Button(root, text="C", padx=55, pady=20, bg="gray54", command=buttonClear)
-buttonNegate = tkinter.Button(root, text="±", padx=55, pady=20, bg="gray54", command=buttonNegate)
-buttonPercent = tkinter.Button(root, text="%", padx=55, pady=20, bg="gray54", command=buttonPercentage)
-buttonBackspace = tkinter.Button(root, text="->", padx=55, pady=20, bg="gray54", command=buttonBackspace)
-buttonCancel = tkinter.Button(root, text="CE", padx=55, pady=20, bg="gray54", command=buttonCancel)
+buttonClear = tkinter.Button(root, text="C", padx=70, pady=20, bg="gray54", command=buttonClear)
+buttonNegate = tkinter.Button(root, text="±", padx=70, pady=20, bg="gray54", command=buttonNegate)
+buttonPercent = tkinter.Button(root, text="%", padx=70, pady=20, bg="gray54", command=buttonPercentage)
+buttonBackspace = tkinter.Button(root, text="->", padx=70, pady=20, bg="gray54", command=buttonBackspace)
+buttonCancel = tkinter.Button(root, text="CE", padx=70, pady=20, bg="gray54", command=buttonCancel)
 
-buttonSin = tkinter.Button(root, text="sin", padx = 55, pady=20, bg="PeachPuff2", command=buttonSine)
-buttonCos = tkinter.Button(root, text="cos",padx = 55, pady=20, bg="PeachPuff2", command=buttonCosine)
-buttonTan = tkinter.Button(root, text="tan",padx = 55, pady=20, bg="PeachPuff2", command=buttonTangent)
+buttonSin = tkinter.Button(root, text="sin", padx =70, pady=20, bg="PeachPuff2", command=buttonSine)
+buttonCos = tkinter.Button(root, text="cos",padx =70, pady=20, bg="PeachPuff2", command=buttonCosine)
+buttonTan = tkinter.Button(root, text="tan",padx =70, pady=20, bg="PeachPuff2", command=buttonTangent)
 
-buttonLogBase10 = tkinter.Button(root, text="log", padx=55, pady=20, bg="PeachPuff2", command=buttonLogBase10)
-buttonNaturalLog = tkinter.Button(root, text="ln", padx=55, pady=20, bg="PeachPuff2", command=buttonNaturalLog)
+buttonLogBase10 = tkinter.Button(root, text="log", padx=70, pady=20, bg="PeachPuff2", command=buttonLogBase10)
+buttonNaturalLog = tkinter.Button(root, text="ln", padx=70, pady=20, bg="PeachPuff2", command=buttonNaturalLog)
 
-buttonSqrt = tkinter.Button(root, text="sqrt", padx=55, pady=20, bg="PeachPuff2", command=buttonSqrt)
-buttonSq = tkinter.Button(root, text="sq", padx=55, pady=20, bg ="PeachPuff2", command=buttonSq)
-buttonExponential = tkinter.Button(root, text="exp", padx=55, pady=20, bg="PeachPuff2", command=buttonExponential)
+buttonSqrt = tkinter.Button(root, text="sqrt", padx=70, pady=20, bg="PeachPuff2", command=buttonSqrt)
+buttonSq = tkinter.Button(root, text="sq", padx=70, pady=20, bg ="PeachPuff2", command=buttonSq)
+buttonExponential = tkinter.Button(root, text="exp", padx=70, pady=20, bg="PeachPuff2", command=buttonExponential)
+
 
 
 #Put the buttons on the screen
@@ -254,27 +274,27 @@ buttonCancel.grid(row=1, column=2)
 buttonPercent.grid(row=1, column=3)
 buttonBackspace.grid(row=1, column=4)
 
-
-buttonDivide.grid(row=2, column=4)
-button9.grid(row=2, column=3)
-button8.grid(row=2, column=2)
-button7.grid(row=2, column=1)
 buttonNaturalLog.grid(row=2, column=0)
+button7.grid(row=2, column=1)
+button8.grid(row=2, column=2)
+button9.grid(row=2, column=3)
+buttonDivide.grid(row=2, column=4)
 
-buttonMultiply.grid(row=3, column=4)
-button6.grid(row=3, column=3)
-button5.grid(row=3, column=2)
-button4.grid(row=3, column=1)
 buttonLogBase10.grid(row=3, column=0)
+button4.grid(row=3, column=1)
+button5.grid(row=3, column=2)
+button6.grid(row=3, column=3)
+buttonMultiply.grid(row=3, column=4)
 
-buttonMinus.grid(row=4, column=4)
-button3.grid(row=4, column=3)
-button2.grid(row=4, column=2)
-button1.grid(row=4, column=1)
 buttonSqrt.grid(row=4, column=0)
+button1.grid(row=4, column=1)
+button2.grid(row=4, column=2)
+button3.grid(row=4, column=3)
+buttonMinus.grid(row=4, column=4)
+
 
 buttonSq.grid(row=5, column = 0)
-button0.grid(row=5, column= 1, columnspan = 2)
+button0.grid(row=5, column= 1, columnspan=2)
 buttonDecimal.grid(row=5, column=3)
 buttonAdd.grid(row=5, column=4)
 
