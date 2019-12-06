@@ -1,8 +1,8 @@
 .calc {
-    background-color: peachpuff;
+    background-color: #333;
     display: flex;    
     flex-flow: wrap;
-    width: 25%;
+    width: 50%;
     border: 1px solid #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
