@@ -7,19 +7,7 @@ root = tkinter.Tk()
 root.title("Calculator")
 
 #Defining padding setup of rows and columns
-root.rowconfigure(0, pad=1)
-root.rowconfigure(1, pad=1)
-root.rowconfigure(2, pad=1)
-root.rowconfigure(3, pad=1)
-root.rowconfigure(4, pad=1)
-root.rowconfigure(5, pad=1)
-root.rowconfigure(6, pad=1)
 
-root.columnconfigure(0, pad=2)
-root.columnconfigure(1, pad=2)
-root.columnconfigure(2, pad=2)
-root.columnconfigure(3, pad=2)
-root.columnconfigure(4, pad=2)
 
 # tkinter.ttk.Style().configure('TButton', padding=(0, 0, 0, 0))
 
@@ -28,7 +16,7 @@ root.columnconfigure(4, pad=2)
 fNum = None
 math = None
 
-e = tkinter.Entry(root, width=40, borderwidth=6)
+e = tkinter.Entry(root, width=40, borderwidth=6, Justify=CENTER)
 e.grid(row=0, column=0, columnspan=6, padx = 25, pady = 15)
 
 def buttonClick(value):
@@ -41,9 +29,9 @@ def buttonClick(value):
 def buttonDecimal():
     current = e.get()
     
-    butt = current.count('.')
-    print(butt)
-    if (butt >= 1):
+    dec = current.count('.')
+    print(dec)
+    if (dec >= 1):
         pass
     else:
        e.insert(tkinter.END, '.')
@@ -222,48 +210,50 @@ def buttonEqual():
             e.insert(0, float(fNum) / float(secondNumber))
         except ZeroDivisionError:
             e.insert(0, 'invalid input')
-        
-
+    
     if math == "exp":
         e.insert(0, float(fNum) ** float(secondNumber))
 
-#Define Buttons
+#Definition of Buttons
+#Awkward sizing on the buttons based on how many characters are within the button. I would do increments/
+# decrements of 2 to get figure out the right padding size.
 ##don't use the parentheses as it will run immediately
+buttonNegate = tkinter.Button(root, text="±", padx=55, pady=20, bg="gray54", command=buttonNegate)
+buttonClear = tkinter.Button(root, text="C", padx=55, pady=20, bg="gray54", command=buttonClear)
+buttonCancel = tkinter.Button(root, text="CE", padx=53, pady=20, bg="gray54", command=buttonCancel)
+buttonPercent = tkinter.Button(root, text="%", padx=55, pady=20, bg="gray54", command=buttonPercentage)
+buttonBackspace = tkinter.Button(root, text="->", padx=55, pady=20, bg="gray54", command=buttonBackspace)
 
-buttonDecimal = tkinter.Button(root, text=".", padx=70, pady=20, bg = "white smoke", command = buttonDecimal)
-button0 = tkinter.Button(root, text="0", padx=150, pady=20,bg = "white smoke", command=lambda: buttonClick(0))
-button1 = tkinter.Button(root, text="1", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(1)) 
-button2 = tkinter.Button(root, text="2", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(2)) 
-button3 = tkinter.Button(root, text="3", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(3)) 
-button4 =tkinter.Button(root, text="4", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(4)) 
-button5 = tkinter.Button(root, text="5", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(5)) 
-button6 = tkinter.Button(root, text="6", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(6)) 
-button7 = tkinter.Button(root, text="7", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(7)) 
-button8 = tkinter.Button(root, text="8", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(8)) 
-button9 = tkinter.Button(root, text="9", padx=70, pady=20,bg = "white smoke", command=lambda: buttonClick(9))
+buttonNaturalLog = tkinter.Button(root, text="ln", padx=53, pady=20, bg="PeachPuff2", command=buttonNaturalLog)
+button7 = tkinter.Button(root, text="7", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(7)) 
+button8 = tkinter.Button(root, text="8", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(8)) 
+button9 = tkinter.Button(root, text="9", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(9))
+buttonDivide = tkinter.Button(root, text="÷", padx=59, pady=20, bg="PeachPuff2", command=buttonDivision)
 
-buttonAdd = tkinter.Button(root, text="+", padx=70, pady=20, bg="PeachPuff2", command=buttonAddition)
-buttonMinus = tkinter.Button(root, text="-", padx=70, pady=20, bg="PeachPuff2", command=buttonSubtraction)
-buttonMultiply = tkinter.Button(root, text="x", padx=70, pady=20, bg="PeachPuff2", command=buttonMultiplication)
-buttonDivide = tkinter.Button(root, text="÷", padx=70, pady=20, bg="PeachPuff2", command=buttonDivision)
-buttonEqual = tkinter.Button(root, text="=", padx=70, pady=20, bg="PeachPuff2", command=buttonEqual)
+buttonLogBase10 = tkinter.Button(root, text="log", padx=51, pady=20, bg="PeachPuff2", command=buttonLogBase10)
+button4 = tkinter.Button(root, text="4", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(4)) 
+button5 = tkinter.Button(root, text="5", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(5)) 
+button6 = tkinter.Button(root, text="6", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(6)) 
+buttonMultiply = tkinter.Button(root, text="x", padx=59, pady=20, bg="PeachPuff2", command=buttonMultiplication)
 
-buttonClear = tkinter.Button(root, text="C", padx=70, pady=20, bg="gray54", command=buttonClear)
-buttonNegate = tkinter.Button(root, text="±", padx=70, pady=20, bg="gray54", command=buttonNegate)
-buttonPercent = tkinter.Button(root, text="%", padx=70, pady=20, bg="gray54", command=buttonPercentage)
-buttonBackspace = tkinter.Button(root, text="->", padx=70, pady=20, bg="gray54", command=buttonBackspace)
-buttonCancel = tkinter.Button(root, text="CE", padx=70, pady=20, bg="gray54", command=buttonCancel)
+buttonSqrt = tkinter.Button(root, text="sqrt", padx=49, pady=20, bg="PeachPuff2", command=buttonSqrt)
+button1 = tkinter.Button(root, text="1", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(1)) 
+button2 = tkinter.Button(root, text="2", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(2)) 
+button3 = tkinter.Button(root, text="3", padx=55, pady=20,bg = "white smoke", command=lambda: buttonClick(3)) 
+buttonMinus = tkinter.Button(root, text="-", padx=61, pady=20, bg="PeachPuff2", command=buttonSubtraction)
 
-buttonSin = tkinter.Button(root, text="sin", padx =70, pady=20, bg="PeachPuff2", command=buttonSine)
-buttonCos = tkinter.Button(root, text="cos",padx =70, pady=20, bg="PeachPuff2", command=buttonCosine)
-buttonTan = tkinter.Button(root, text="tan",padx =70, pady=20, bg="PeachPuff2", command=buttonTangent)
+buttonSq = tkinter.Button(root, text="sq", padx=53, pady=20, bg ="PeachPuff2", command=buttonSq)
+button0 = tkinter.Button(root, text="0", padx=119, pady=20,bg = "white smoke", command=lambda: buttonClick(0))
+buttonDecimal = tkinter.Button(root, text=".", padx=55, pady=20, bg = "white smoke", command = buttonDecimal)
+buttonAdd = tkinter.Button(root, text="+", padx=59, pady=20, bg="PeachPuff2", command=buttonAddition)
 
-buttonLogBase10 = tkinter.Button(root, text="log", padx=70, pady=20, bg="PeachPuff2", command=buttonLogBase10)
-buttonNaturalLog = tkinter.Button(root, text="ln", padx=70, pady=20, bg="PeachPuff2", command=buttonNaturalLog)
+buttonExponential = tkinter.Button(root, text="exp", padx=51, pady=20, bg="PeachPuff2", command=buttonExponential)
+buttonSin = tkinter.Button(root, text="sin", padx = 51, pady=20, bg="PeachPuff2", command=buttonSine)
+buttonCos = tkinter.Button(root, text="cos", padx = 51, pady=20, bg="PeachPuff2", command=buttonCosine)
+buttonTan = tkinter.Button(root, text="tan", padx = 51, pady=20, bg="PeachPuff2", command=buttonTangent)
+buttonEqual = tkinter.Button(root, text="=", padx=59, pady=20, bg="PeachPuff2", command=buttonEqual)
 
-buttonSqrt = tkinter.Button(root, text="sqrt", padx=70, pady=20, bg="PeachPuff2", command=buttonSqrt)
-buttonSq = tkinter.Button(root, text="sq", padx=70, pady=20, bg ="PeachPuff2", command=buttonSq)
-buttonExponential = tkinter.Button(root, text="exp", padx=70, pady=20, bg="PeachPuff2", command=buttonExponential)
+
 
 
 
@@ -303,5 +293,20 @@ buttonSin.grid(row=6, column=1)
 buttonCos.grid(row=6, column=2)
 buttonTan.grid(row=6, column=3)
 buttonEqual.grid(row=6,column=4)
+
+# Configuring the grids to have no padding in between.
+root.grid_rowconfigure(0, pad=0, minsize=0)
+root.grid_rowconfigure(1, pad=0, minsize=0)
+root.grid_rowconfigure(2, pad=0, minsize=0)
+root.grid_rowconfigure(3, pad=0, minsize=0)
+root.grid_rowconfigure(4, pad=0, minsize=0)
+root.grid_rowconfigure(5, pad=0, minsize=0)
+root.grid_rowconfigure(6, pad=0, minsize=0)
+
+root.grid_columnconfigure(0, pad=0, minsize=0)
+root.grid_columnconfigure(1, pad=0, minsize=0)
+root.grid_columnconfigure(2, pad=0, minsize=0)
+root.grid_columnconfigure(3, pad=0, minsize=0)
+root.grid_columnconfigure(4, pad=0, minsize=0)
 
 root.mainloop()

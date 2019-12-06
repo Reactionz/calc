@@ -12,6 +12,8 @@
     color: #fff;
     display: flex;
     min-width: 100%;
+    flex-basis: 100%;
+    position:sticky;
 }
 
 .screen {
