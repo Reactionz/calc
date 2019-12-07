@@ -142,7 +142,10 @@ def buttonTangent():
     fNum = float(firstNumber)
     print(fNum)
     e.delete(0, tkinter.END)
-    e.insert(0, tan(fNum * pi / 180))
+    if (fNum % 180 != 0 or fNum % 90 == 0):
+        e.insert(0,'invalid input')
+    else:
+        e.insert(0, tan(fNum * pi / 180))
 
 def buttonExponential():
     firstNumber = e.get()
