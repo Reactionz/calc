@@ -115,8 +115,8 @@ function handleSymbol(value) {
         case 'tan':
             
             buffer = Math.tan(buffer * Math.PI / 180);
-            if (buffer == 16331239353195370) {
-            buffer='error';
+            if (buffer % 90 == 0 || buffer % 180 != 0) {
+                buffer='error';
             }
             break;
         case 'sq':
