@@ -157,7 +157,7 @@ while($continue eq "y") {
         }
         
         $result = tan($num * pi / 180);
-        if ($num == 90) {
+        if ($num % 90 == 0) {
             $result = "invalid input";
         }
         print "tan($num) = $result\n";
