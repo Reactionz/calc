@@ -64,11 +64,11 @@ while($continue eq "y") {
     print "10 - Logarithm Base 10 (log)\n";
     print "11 - Power of 2 (sq)\n";
     print "12 - Square Root (sqrt)\n";
+    print "13 - Clear \n";
+    print "input result to get the previous result or defaults to 0\n";
     print "choose operation to use:\n";
-
     my $operation = <STDIN>;
     chomp $operation;
-    print "input result to use previous answer or 0\n";
     if($operation eq '1') {
         print "enter first number: ";
         $fNum = <STDIN>;
@@ -220,7 +220,11 @@ while($continue eq "y") {
         $result = sqrt($num);
 
         print "sqrt($num) = $result\n";
-    } else {
+    } elsif($operation eq '13') {
+        print "clearing result\n";
+        $result = 0;
+    }
+    else {
         print 'invalid operation\n'
     }
     print "Would you like to Continue? y/n?\n";
