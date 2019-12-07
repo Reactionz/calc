@@ -43,7 +43,7 @@ def buttonClear():
 
 def buttonCancel():
     e.delete(0, tkinter.END)
-    e.insert(0, 0)
+##    e.insert(0, 0)
 
 def buttonBackspace():
     current = e.get()
