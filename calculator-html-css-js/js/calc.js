@@ -113,7 +113,11 @@ function handleSymbol(value) {
             buffer = Math.cos(buffer * Math.PI / 180);
             break;
         case 'tan':
+            
             buffer = Math.tan(buffer * Math.PI / 180);
+            if (buffer == 16331239353195370) {
+            buffer='error';
+            }
             break;
         case 'sq':
             buffer = Math.pow(buffer, 2);
@@ -168,6 +172,9 @@ function flushOperation(intBuffer) {
         runningTotal *= intBuffer;
     } else if (previousOperator === "÷") {
         runningTotal /= intBuffer;
+        if (runningTotal == "Infinity") {
+            runningTotal = "Cannot divide by Zero";
+        }
     } else if (previousOperator === "exp") {
         runningTotal = runningTotal ** intBuffer;
     }

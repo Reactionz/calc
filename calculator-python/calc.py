@@ -16,7 +16,7 @@ root.title("Calculator")
 fNum = None
 math = None
 
-e = tkinter.Entry(root, width=40, borderwidth=6, Justify=CENTER)
+e = tkinter.Entry(root, width=40, borderwidth=6)
 e.grid(row=0, column=0, columnspan=6, padx = 25, pady = 15)
 
 def buttonClick(value):
